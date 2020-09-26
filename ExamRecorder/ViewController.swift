@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet var label: UILabel!
+   
     var receiveData: String = ""
 
     override func viewDidLoad() {

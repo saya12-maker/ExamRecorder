@@ -11,8 +11,8 @@ import UIKit
 class TableViewController: UITableViewController {
     
     //cellのlabelに書く文字列
-    let name1: [String] = ["〇〇","〇〇","〇〇"]
-    let name2: [String] = ["〇〇","〇〇","〇〇"]
+    let name1: [String] = ["","",""]
+    let name2: [String] = ["","",""]
     
     //遷移先のViewControllerに渡す変数
     var giveData: String = ""
@@ -63,16 +63,18 @@ class TableViewController: UITableViewController {
         
         //cellのlabelに値を入れる
         if indexPath.section == 0 {
-            cell.name.text = name1[indexPath.item]
+//            cell.name.text = name1[indexPath.item]
+            cell.textLabel!.text = name1[indexPath.item]
         } else {
-            cell.name.text = name2[indexPath.item]
+//            cell.name.text = name2[indexPath.item]
+            cell.textLabel!.text = name2[indexPath.item]
         }
         
         return cell
     }
     
     //cellが押されたときに呼ばれる関数
-    //画面遷移の処理もここで
+    //画面遷移のもここで
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //押されたときのcellのlabelの文字列をviewControllerに渡したいので、一旦、giveDataに入れとく
         if indexPath.section == 0 {
