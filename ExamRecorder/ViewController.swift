@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var TableView: UITableView!
+    @IBAction func Clear(_ sender:Any) {
+        
+    }
     
     @IBOutlet var label: UILabel!
    
