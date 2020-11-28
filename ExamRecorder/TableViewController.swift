@@ -10,7 +10,7 @@ import UIKit
  //2次元配列　セルの内容が入る
 var cellList: [[String]] = []
  //セクションの名前が入る
-var SectionTitles: [String] = []
+var sectionTitles: [String] = []
  //セクションの数
 var sectionNum = 0
  //セクションの高さ
@@ -24,21 +24,33 @@ var indexPath_section:Int = 0
  //セル番号
 var indexPath_row:Int = 0
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var TableView: UITableView!
-    @IBAction func Clear(_ sender: Any) {
-}
     
-    /*
- セクション内のセル数を決めるメソッド（＊＊必須＊＊）
- */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        TableView.delegate = self
+        TableView.dataSource = self
+        
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    
+    //セクション内のセル数を決めるメソッド（＊＊必須＊＊）
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellList[Int(section)].count
     }
     /*
    セルのインスタンスを生成するメソッド「表示するcellの中身を決める」（＊＊必須＊＊）
      */
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let TableCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
         TableCell.textLabel!.text = cellList[indexPath.section][Int(indexPath.item)]
         return TableCell
@@ -77,8 +89,43 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         label.textColor = UIColor.black
         //self.view.frame.maxX は横幅の最大値を取得　基本的には左上が座標(0,0)
         let button = UIButton(frame: CGRect(x:self.view.frame.maxX - 50, y:0, width:50, height: 50))
-        
+        button.backgroundColor = UIColor.black
+        button.setTitle("追加", for: .normal)
+        //ボタンにタグをつける
+        button.tag = section
+        //追加ボタンがタップされた際に画面遷移をする(buttonTappedはタップされた際に呼び出される関数)
+        button.addTarget(self, action: #selector(TableViewController.buttonTapped(sender:)), for: .touchUpInside)
+        //セクションバーの上にあるviewに加える 階層として sectionBar > view > label = button
+        view.addSubview(label)
+        view.addSubview(button)
+        return view
     }
+    
+    @objc func buttonTapped(sender: UIButton){
+        indexPath_section = sender.tag
+        //同じsttoryboard内であることをここで定義
+        let storyboard: UIStoryboard = self.storyboard!
+        //移動先のstoryboardを選択(Identifierを指定する)
+        let second = storyboard.instantiateViewController(withIdentifier: "cellAdd")
+        //実際に移動するコード
+        self.present(second, animated: true, completion: nil)
+    }
+    
+    /*
+     セルを選択した時のイベントを追加
+     */
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //記憶させてCellTapped.swiftで使う
+        indexPath_section = indexPath.section
+        indexPath_row = indexPath.row
+        //同じstoryboard内であることをここで定義
+        let storyboard: UIStoryboard = self.storyboard!
+        //移動先のsotryboardを選択(Identtifierを指定する)
+        let second = storyboard.instantiateViewController(identifier: "cellTapped")
+        //実際に移動するコード
+        self.present(second, animated: true, completion: nil)
+    }
+    
     
     
     //cellのlabelに書く文字列
@@ -88,15 +135,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //遷移先のViewControllerに渡す変数
     var giveData: String = ""
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
     
 
     // MARK: - Table view data source
@@ -104,63 +142,24 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //sectionの数を返す関数
    
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if section == 0 {
-            return name1.count
-        } else if section == 1{
-            return name2.count
-        } else {
-            return 0
-        }
-    }
+    
     
     //sectionの高さを返す関数
-     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 40
-    }
+     
     
     //sectionに載せる文字列を返す関数
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "section\(section)"
     }
     
-    //cellの情報を書き込む関数
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+   
         
-        //cellのlabelに値を入れる
-        if indexPath.section == 0 {
-//            cell.name.text = name1[indexPath.item]
-            cell.textLabel!.text = name1[indexPath.item]
-        } else {
-//            cell.name.text = name2[indexPath.item]
-            cell.textLabel!.text = name2[indexPath.item]
-        }
         
-        return cell
     }
     
     //cellが押されたときに呼ばれる関数
     //画面遷移のもここで
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //押されたときのcellのlabelの文字列をviewControllerに渡したいので、一旦、giveDataに入れとく
-        if indexPath.section == 0 {
-            giveData = name1[indexPath.item]
-        } else {
-            giveData = name2[indexPath.item]
-        }
-        //Segueを使った画面遷移を行う関数
-        performSegue(withIdentifier: "Segue", sender: nil)
-    }
     
-    //遷移先のViewControllerにデータを渡す関数
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Segue" {
-            let vc = segue.destination as! ViewController
-            vc.receiveData = giveData
-        }
-    }
     
     
     
@@ -222,4 +221,4 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     */
 
-}
+

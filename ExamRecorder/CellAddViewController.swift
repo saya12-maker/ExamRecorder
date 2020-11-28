@@ -9,6 +9,15 @@
 import UIKit
 
 class CellAddViewController: UIViewController {
+    @IBOutlet weak var CellTextField: UITextField!
+    @IBAction func CellAddButton (_ sender: Any) {
+        //cellList.append([])
+        cellList[indexPath_section].append(CellTextField.text!)
+        //追加ボタンを押したらフィールドを空にする
+        CellTextField.text = ""
+        //セルの数を1つ増やす。
+        cellNum += 1
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

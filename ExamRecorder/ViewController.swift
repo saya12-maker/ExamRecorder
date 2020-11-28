@@ -8,6 +8,7 @@
 
 import UIKit
 
+//UITableViewDelegate, UITableViewDataSourceはどこへ入れれば？
 class ViewController: UIViewController {
     @IBOutlet weak var TableView: UITableView!
     @IBAction func Clear(_ sender:Any) {

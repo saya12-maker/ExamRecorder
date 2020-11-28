@@ -9,9 +9,13 @@
 import UIKit
 
 class CellTappedViewController: UIViewController {
+    @IBOutlet weak var CellName: UILabel!
+    @IBOutlet weak var CellNumber: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CellName.text = cellList[indexPath_section][Int(indexPath_row)]
+        CellNumber.text = "第\(indexPath_section)セクションの\(indexPath_row)個目のセル"
 
         // Do any additional setup after loading the view.
     }
