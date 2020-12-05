@@ -48,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YM5-YB-K2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="30.803571428571427"/>
+            <point key="canvasLocation" x="964" y="31"/>
         </scene>
         <!--Item-->
         <scene sceneID="HSO-LL-hHU">
@@ -65,7 +65,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSM-3N-Mch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899" y="31"/>
+            <point key="canvasLocation" x="29" y="31"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="CCS-lb-x4L">
+            <objects>
+                <viewController id="jAj-of-rXe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4cW-AJ-cbc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Lvb-IS-dOp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gXP-DV-y4P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WcZ-5K-aid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="938"/>
         </scene>
         <!--Section Add View Controller-->
         <scene sceneID="n5C-rT-qdK">
@@ -87,35 +103,18 @@
                                     </items>
                                 </navigationBar>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Iz-fh-CcE">
-                                <rect key="frame" x="75" y="413" width="256" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3z-X0-FOT">
-                                <rect key="frame" x="161" y="592" width="85" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="SectionAddButton:" destination="a8b-F4-yb3" eventType="touchUpInside" id="58K-tD-7YO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wgR-y3-zNN"/>
                     </view>
                     <navigationItem key="navigationItem" id="xMQ-u7-1qm"/>
                     <connections>
-                        <outlet property="SectionTextField" destination="5Iz-fh-CcE" id="e5a-OG-bDy"/>
+                        <segue destination="XL0-HB-9ik" kind="show" id="3aW-Ga-xKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnL-PR-pWa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2683" y="25"/>
+            <point key="canvasLocation" x="1948" y="31"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="20q-vh-JFY">
@@ -137,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9W-p4-LbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3697.1014492753625" y="24.776785714285712"/>
+            <point key="canvasLocation" x="4365" y="31"/>
         </scene>
         <!--Cell Add View Controller-->
         <scene sceneID="OCo-1K-bm3">
@@ -232,7 +231,7 @@
             <objects>
                 <viewController id="XL0-HB-9ik" customClass="ViewController" customModule="ExamRecorder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6K7-x3-hfr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-3Z-crW">
@@ -307,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aaq-Lt-kVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66.666666666666671" y="710.49107142857144"/>
+            <point key="canvasLocation" x="2888" y="31"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EKW-xc-JWd">
@@ -320,8 +319,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XL0-HB-9ik" kind="relationship" relationship="viewControllers" id="9RV-3m-74G"/>
-                        <segue destination="Ezw-D8-mHD" kind="relationship" relationship="viewControllers" id="5wm-9R-IWD"/>
+                        <segue destination="Ezw-D8-mHD" kind="relationship" relationship="viewControllers" id="jbm-GZ-1cx"/>
+                        <segue destination="jAj-of-rXe" kind="relationship" relationship="viewControllers" id="x3O-sX-3qV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZI-6k-LzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

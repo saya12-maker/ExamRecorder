@@ -19,6 +19,10 @@ class SectionAddViewController: UIViewController {
         sectionNum += 1
         cellList.append([])
     }
+    
+    @IBAction func save() {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

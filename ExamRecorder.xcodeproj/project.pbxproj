@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4713D92B6EDFADAB59DDDEE2 /* Pods_ExamRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB21A30129827BB9FB0F121 /* Pods_ExamRecorder.framework */; };
 		D22D3E112556B050002967E5 /* SectionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E102556B050002967E5 /* SectionAddViewController.swift */; };
 		D22D3E132556B4FA002967E5 /* CellAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E122556B4FA002967E5 /* CellAddViewController.swift */; };
 		D22D3E152556B52A002967E5 /* CellTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E142556B52A002967E5 /* CellTappedViewController.swift */; };
+		D248C44E257B98F200049CFA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248C44D257B98F200049CFA /* Model.swift */; };
 		D2CA77F1250399DC00A498EB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA77F0250399DC00A498EB /* TableViewController.swift */; };
 		D2DDAFEB250C82DC00D7608C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDAFEA250C82DC00D7608C /* TableViewCell.swift */; };
 		D2FDD68024F8DE2400922A2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FDD67F24F8DE2400922A2F /* AppDelegate.swift */; };
@@ -40,9 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB21A30129827BB9FB0F121 /* Pods_ExamRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExamRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E0D312F18BBE33AB607BE16 /* Pods-ExamRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamRecorder.debug.xcconfig"; path = "Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder.debug.xcconfig"; sourceTree = "<group>"; };
 		D22D3E102556B050002967E5 /* SectionAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionAddViewController.swift; sourceTree = "<group>"; };
 		D22D3E122556B4FA002967E5 /* CellAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAddViewController.swift; sourceTree = "<group>"; };
 		D22D3E142556B52A002967E5 /* CellTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTappedViewController.swift; sourceTree = "<group>"; };
+		D248C44D257B98F200049CFA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D2CA77F0250399DC00A498EB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D2DDAFEA250C82DC00D7608C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D2FDD67C24F8DE2400922A2F /* ExamRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +64,7 @@
 		D2FDD69D24F8DE2900922A2F /* ExamRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExamRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FDD6A124F8DE2A00922A2F /* ExamRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRecorderUITests.swift; sourceTree = "<group>"; };
 		D2FDD6A324F8DE2A00922A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA54F57BB3BCC973AF103C14 /* Pods-ExamRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamRecorder.release.xcconfig"; path = "Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4713D92B6EDFADAB59DDDEE2 /* Pods_ExamRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EC1F3A99E17936D16C7585C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AB21A30129827BB9FB0F121 /* Pods_ExamRecorder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2FDD67324F8DE2400922A2F = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +108,8 @@
 				D2FDD69524F8DE2900922A2F /* ExamRecorderTests */,
 				D2FDD6A024F8DE2A00922A2F /* ExamRecorderUITests */,
 				D2FDD67D24F8DE2400922A2F /* Products */,
+				DC11A186CEB284C913950E47 /* Pods */,
+				4EC1F3A99E17936D16C7585C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +138,7 @@
 				D22D3E102556B050002967E5 /* SectionAddViewController.swift */,
 				D22D3E122556B4FA002967E5 /* CellAddViewController.swift */,
 				D22D3E142556B52A002967E5 /* CellTappedViewController.swift */,
+				D248C44D257B98F200049CFA /* Model.swift */,
 			);
 			path = ExamRecorder;
 			sourceTree = "<group>";
@@ -143,6 +161,15 @@
 			path = ExamRecorderUITests;
 			sourceTree = "<group>";
 		};
+		DC11A186CEB284C913950E47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E0D312F18BBE33AB607BE16 /* Pods-ExamRecorder.debug.xcconfig */,
+				DA54F57BB3BCC973AF103C14 /* Pods-ExamRecorder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2FDD6A624F8DE2A00922A2F /* Build configuration list for PBXNativeTarget "ExamRecorder" */;
 			buildPhases = (
+				1DCC3B65D599D582DA908CCF /* [CP] Check Pods Manifest.lock */,
 				D2FDD67824F8DE2400922A2F /* Sources */,
 				D2FDD67924F8DE2400922A2F /* Frameworks */,
 				D2FDD67A24F8DE2400922A2F /* Resources */,
+				14710D59C898DF3294ADB499 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,11 +298,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14710D59C898DF3294ADB499 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DCC3B65D599D582DA908CCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExamRecorder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2FDD67824F8DE2400922A2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D248C44E257B98F200049CFA /* Model.swift in Sources */,
 				D22D3E112556B050002967E5 /* SectionAddViewController.swift in Sources */,
 				D2DDAFEB250C82DC00D7608C /* TableViewCell.swift in Sources */,
 				D2FDD68424F8DE2400922A2F /* ViewController.swift in Sources */,
@@ -452,6 +524,7 @@
 		};
 		D2FDD6A724F8DE2A00922A2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E0D312F18BBE33AB607BE16 /* Pods-ExamRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -469,6 +542,7 @@
 		};
 		D2FDD6A824F8DE2A00922A2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA54F57BB3BCC973AF103C14 /* Pods-ExamRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
