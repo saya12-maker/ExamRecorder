@@ -7,17 +7,56 @@
 //
 
 import UIKit
- 
-class TableViewController: UIViewController {
+import RealmSwift
+
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let realm = try! Realm()
+    var TestArray : Results<Test>!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellList[Int(section)].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let TableCell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath)
+        TableCell.textLabel!.text = TestArray[indexPath.row].date
+        return TableCell
+    }
+    
+    
+    @IBOutlet weak var TableView: UITableView!
+    @IBAction func Clear(_ sender: Any) {
+        
+    }
+     let formatter = DateFormatter()
     
     let date: [String] = ["", "", ""]
+    
+    var cellList:[[String]] = []
+    
+    var sectionTitles:[[String]] = []
+    
+    var sectionNum = 0
+    
+    var sectionHeight: Int = 50
+    
+    var cellNum = 0
+    
+    var cellHeight: Int = 100
+    
+    var indexPath_section: Int = 0
+    
+    var indexPath_row: Int = 0
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-  
-        
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+        TestArray = realm.objects(Test.self)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,10 +64,45 @@ class TableViewController: UIViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionNum
+    }
  
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(sectionHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cellHeight)
+    }
+    
+   
+    
+    @IBAction func buttonTapped() {
+        //Realmにデータを追加する
+        let test = Test()
+        
+        test.date = formatter.string(from: Date())
+        
+        try! realm.write {
+            realm.add(test)
+        }
+        //tableをリロードする
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexPath_section = indexPath.section
+        indexPath_row = indexPath.row
+        let storyboard: UIStoryboard = self.storyboard!
+        let second = storyboard.instantiateViewController(withIdentifier: "cellTapped")
+        self.present(second, animated: true, completion: nil)
+    }
     
     
-    
+   
     
    
     

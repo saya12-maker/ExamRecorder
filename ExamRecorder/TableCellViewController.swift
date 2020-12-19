@@ -1,25 +1,29 @@
 //
-//  CellAddViewController.swift
+//  TableCellViewController.swift
 //  ExamRecorder
 //
-//  Created by Sayaka Abe on 2020/11/07.
+//  Created by Sayaka Abe on 2020/12/12.
 //  Copyright © 2020 com.litech. All rights reserved.
 //
 
 import UIKit
+import AVFoundation
 
-class CellAddViewController: UIViewController {
-    @IBOutlet weak var CellTextField: UITextField!
-    @IBAction func CellAddButton (_ sender: Any) {
-        //cellList.append([])
-       
-    }
-
+class TableCellViewController: UIViewController {
+    
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+    
     }
+    
+    
+    
+   
     
 
     /*
