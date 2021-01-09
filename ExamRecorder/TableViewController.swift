@@ -56,13 +56,35 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
-        TestArray = realm.objects(Test.self)
+         TestArray = realm.objects(Test.self)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @IBAction func addNewTest() {
+        let test = Test()
+        test.date = ""
+        test.score = ""
+        test.subject = ""
+        test.review = ""
+        test.goal = ""
+        test.toDo = ""
+        try! realm.write {
+            realm.add(test)
+        }
+    }
+    
+    @IBAction func editLastTest() {
+        let TestArray:Results<Test> = realm.objects(Test.self)
+        let test = TestArray[0]
+        try! realm.write {
+            test.date = ""
+            realm.add(test)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,7 +123,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(second, animated: true, completion: nil)
     }
     
-    
+    let preNC = self.tableViewController as! UINavigationController
+    let preVC = preNC.viewControllers[preNC.viewControllers.count - 1] as TableViewController
+    preVC.tableView.reloadData()
    
     
    
