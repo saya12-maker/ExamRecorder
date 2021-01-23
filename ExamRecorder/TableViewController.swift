@@ -113,6 +113,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //tableをリロードする
         
         
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -123,7 +125,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(second, animated: true, completion: nil)
     }
     
-    let preNC = self.tableViewController as! UINavigationController
+    /*
+    let preNC = self.TableViewController as! UINavigationController
     let preVC = preNC.viewControllers[preNC.viewControllers.count - 1] as TableViewController
     preVC.tableView.reloadData()
    
@@ -187,4 +190,5 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     */
 
 
+ }*/
 }

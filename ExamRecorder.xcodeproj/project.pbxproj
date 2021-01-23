@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4713D92B6EDFADAB59DDDEE2 /* Pods_ExamRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB21A30129827BB9FB0F121 /* Pods_ExamRecorder.framework */; };
+		D204DC6E25B2FC1900C1EA54 /* ReflectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204DC6D25B2FC1900C1EA54 /* ReflectViewController.swift */; };
 		D22D3E112556B050002967E5 /* SectionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E102556B050002967E5 /* SectionAddViewController.swift */; };
 		D22D3E132556B4FA002967E5 /* CellAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E122556B4FA002967E5 /* CellAddViewController.swift */; };
 		D22D3E152556B52A002967E5 /* CellTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D3E142556B52A002967E5 /* CellTappedViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		0AB21A30129827BB9FB0F121 /* Pods_ExamRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExamRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E0D312F18BBE33AB607BE16 /* Pods-ExamRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamRecorder.debug.xcconfig"; path = "Target Support Files/Pods-ExamRecorder/Pods-ExamRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		D204DC6D25B2FC1900C1EA54 /* ReflectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReflectViewController.swift; path = /Users/Sayaka/Desktop/ExamRecorder/ExamRecorder/ReflectViewController.swift; sourceTree = "<absolute>"; };
 		D22D3E102556B050002967E5 /* SectionAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionAddViewController.swift; sourceTree = "<group>"; };
 		D22D3E122556B4FA002967E5 /* CellAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAddViewController.swift; sourceTree = "<group>"; };
 		D22D3E142556B52A002967E5 /* CellTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTappedViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				D2FDD68A24F8DE2900922A2F /* LaunchScreen.storyboard */,
 				D2FDD68D24F8DE2900922A2F /* Info.plist */,
 				D2CA77F0250399DC00A498EB /* TableViewController.swift */,
+				D204DC6D25B2FC1900C1EA54 /* ReflectViewController.swift */,
 				D2DDAFEA250C82DC00D7608C /* TableViewCell.swift */,
 				D22D3E102556B050002967E5 /* SectionAddViewController.swift */,
 				D22D3E122556B4FA002967E5 /* CellAddViewController.swift */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D248C44E257B98F200049CFA /* Model.swift in Sources */,
+				D204DC6E25B2FC1900C1EA54 /* ReflectViewController.swift in Sources */,
 				D22D3E112556B050002967E5 /* SectionAddViewController.swift in Sources */,
 				D2DDAFEB250C82DC00D7608C /* TableViewCell.swift in Sources */,
 				D2FDD68424F8DE2400922A2F /* ViewController.swift in Sources */,
